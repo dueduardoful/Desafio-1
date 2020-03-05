@@ -1,6 +1,6 @@
 package entities;
 
-public class ContaCorrente {
+public class ContaCorrente extends Conta {
 	private double valorTaxa;
 	
 	public ContaCorrente() {

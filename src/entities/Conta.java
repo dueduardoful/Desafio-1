@@ -17,13 +17,21 @@ public class Conta {
 	public int getAgencia() {
 		return agencia;
 	}
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
 
 	public int getNumeroConta() {
 		return numeroConta;
 	}
-
+	public void setNumeroConta(int numeroconta) {
+		this.numeroConta = numeroconta;
+	}
 	public double getSaldo() {
 		return saldo;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 	//sacar
 	public void saque(double total) {

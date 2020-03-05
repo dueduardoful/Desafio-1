@@ -9,6 +9,9 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
+	public Cliente() {
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -20,12 +23,9 @@ public class Cliente {
 	public String getCpf() {
 		return cpf;
 	}
-
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
-	
 	
 	
 
