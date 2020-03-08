@@ -5,11 +5,9 @@ public class ContaPoupanca extends Conta {
 	public ContaPoupanca() {
 		super();
 	}
-	
 	public ContaPoupanca(int agencia, int numeroConta, double saldo, double limite) {
 		super(agencia, numeroConta, saldo, limite);
 	}
-	
 	public int getAgencia() {
 		return agencia;
 	}

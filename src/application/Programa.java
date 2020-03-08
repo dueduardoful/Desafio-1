@@ -5,8 +5,6 @@ import entities.ContaCorrente;
 public class Programa {
 
 	public static void main(String[] args) {
-		
-		
 		// ======================== DADOS CLIENTE EDUARDO ==========================
 		ContaCorrente conta1 = new ContaCorrente();
 		conta1.setAgencia(3314);
@@ -16,6 +14,7 @@ public class Programa {
 		Cliente cliente1 = new Cliente();
 		cliente1.setNome("Eduardo Batista");
 		cliente1.setCpf("320.201.029-43");
+		
 		// ======================== DADOS CLIENTE JOAO ==========================
 		ContaCorrente conta2 = new ContaCorrente();
 		conta2.setAgencia(2215);
@@ -26,7 +25,7 @@ public class Programa {
 		cliente2.setNome("Joao");
 		cliente2.setCpf("416.129.245-65");
 		
-		conta1.transfere(100, conta2);
+		conta1.transfere(300, conta2);
 		
 		System.out.println("agencia: " + conta1.getAgencia()
 		+ "\nConta 1: "

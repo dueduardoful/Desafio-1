@@ -54,8 +54,8 @@ public abstract class Conta {
 			saldo += - valor - taxaConta;
 		}
 		else if(valor > saldo) {
-			saldo = saldo -valor - taxaLimite;
-			limite = limite + saldo;
+			limite = limite-(valor-saldo + taxaLimite);
+			saldo = 0;
 		}
 		else if(valor == saldo) {
 			saldo = saldo - valor;
@@ -63,9 +63,6 @@ public abstract class Conta {
 		}
 		else if(valor + taxaLimite > limite + saldo) {
 			System.out.println("Saldo Insuficiente" + saldo);
-		}
-		else {
-			
 		}
 	}
 	// depositar
@@ -75,7 +72,7 @@ public abstract class Conta {
 	// transfere
 	public void transfere(double valor, ContaCorrente conta) {
 		saldo -= valor - taxaTransf;
-		conta.deposito(100);
+		conta.deposito(valor);
 	}
 	// limite
 	public void limite(double valor) {
