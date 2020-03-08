@@ -51,7 +51,7 @@ public abstract class Conta {
 	//sacar
 	public void saque(double valor) {
 		if (valor < saldo) {
-			saldo += - valor - taxaConta;
+			saldo += - valor + limite - taxaConta;
 		}
 		else if(valor > saldo) {
 			limite = limite-(valor-saldo + taxaLimite);
