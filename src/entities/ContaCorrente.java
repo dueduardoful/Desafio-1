@@ -6,6 +6,7 @@ public class ContaCorrente extends Conta {
 	private double taxaConta = 0.3;
 	private double taxaLimite = 2;
 	private double limite = 300;
+	private double taxaTransf = 4;
 	
 	public ContaCorrente() {
 		super();
@@ -56,6 +57,9 @@ public class ContaCorrente extends Conta {
 		else if(valor >= limite + saldo) {
 			System.out.println("Saldo Insuficiente");
 		}
+		else {
+			
+		}
 	}
 	
 	@Override
@@ -65,8 +69,9 @@ public class ContaCorrente extends Conta {
 	}
 	@Override
 	// transfere
-	public void transfere(double valor) {
-		saldo -= valor;
+	public void transfere(double valor, ContaCorrente conta) {
+		saldo -= valor + taxaTransf;
+		conta.deposito(100);
 	}
 	@Override
 	// limite

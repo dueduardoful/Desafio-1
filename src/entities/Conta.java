@@ -4,10 +4,11 @@ public abstract class Conta {
 
 	protected int agencia;
 	protected int numeroConta;
-	protected double saldo = 200;
+	protected double saldo;
 	private double taxaConta = 0.3;
 	private double taxaLimite = 2;
 	protected double limite = 300;
+	private double taxaTransf = 4;
 	
 	Cliente cliente;
 	
@@ -60,8 +61,11 @@ public abstract class Conta {
 			saldo = saldo - valor;
 			limite = limite -taxaLimite;
 		}
-		else if(valor >= limite + saldo) {
-			System.out.println("Saldo Insuficiente");
+		else if(valor + taxaLimite > limite + saldo) {
+			System.out.println("Saldo Insuficiente" + saldo);
+		}
+		else {
+			
 		}
 	}
 	// depositar
@@ -69,8 +73,9 @@ public abstract class Conta {
 		saldo += total;
 	}
 	// transfere
-	public void transfere(double valor) {
-		saldo -= valor;
+	public void transfere(double valor, ContaCorrente conta) {
+		saldo -= valor - taxaTransf;
+		conta.deposito(100);
 	}
 	// limite
 	public void limite(double valor) {
