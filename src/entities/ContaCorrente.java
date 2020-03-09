@@ -71,10 +71,19 @@ public class ContaCorrente extends Conta {
 	@Override
 	// transfere
 	public void transfere(double valor, ContaCorrente conta) {
+		if (valor == saldo) {
 		saldo = saldo - valor;
 		limite = limite - taxaTransf;
-		limite = limite + saldo;
-		saldo = 0;
+		saldo = -taxaTransf;
+		}
+		else if (valor > saldo) {
+			limite = limite-(valor-saldo + taxaTransf);
+			saldo = -saldo;
+		}
+		else {
+			saldo = saldo - valor - taxaTransf;
+		}
+
 		conta.deposito(valor);
 	}
 	@Override

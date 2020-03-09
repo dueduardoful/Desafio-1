@@ -25,7 +25,7 @@ public class Programa {
 		cliente2.setNome("Joao");
 		cliente2.setCpf("416.129.245-65");
 		
-		conta1.transfere(400, conta2);
+		conta1.transfere(200, conta2);
 		
 		System.out.println("agencia: " + conta1.getAgencia()
 		+ "\nConta 1: "
